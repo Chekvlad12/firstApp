@@ -1,0 +1,4 @@
+.content {
+	@apply flex-auto max-h-screen m-6  bg-slate-950 rounded-3xl  
+	  
+}

@@ -1,20 +1,21 @@
-import { useState } from 'react'
-import './App.css';
-import { Button } from "./button";
+import { useState } from "react";
+import style from "./components/content/content.module.css";
+import { Button } from "./components/button";
 import { clsx } from "clsx";
+import { Aside } from "./components/aside/aside";
 import { nanoid } from "nanoid";
-
-
-
-
+import { Content } from "./components/content/content";
 
 function App() {
+  return (
+    <div className="bg-slate-950 w-screen min-h-screen  flex">
+      <Aside />
+      <Content />
+    </div>
+  );
+}
 
-	return 
-   }
-
-export default App
-
+export default App;
 
 // const [value, setValue] = useState('');
 // const [tasks, setTasks] = useState([]);
@@ -32,7 +33,7 @@ export default App
 //       <Button text='done'  />
 //       <Button text='edit' />
 //       <Button text='delete'  onSetTask={() => deleteTask(elem.id)} />
-      
+
 //    </div>
 // })
 // return (
@@ -49,51 +50,44 @@ export default App
 // )
 // }
 
-   // const users = [
-   //    {id: id(), name: 'user1', 
-   //       surn: 'surn1', age: 30, }, 
-   //    {id: id(), name: 'user2', 
-   //       surn: 'surn2', age: 31,}, 
-   //    {id: id(), name: 'user3', 
-   //       surn: 'surn3', age: 32,}, 
-   // ];
+// const users = [
+//    {id: id(), name: 'user1',
+//       surn: 'surn1', age: 30, },
+//    {id: id(), name: 'user2',
+//       surn: 'surn2', age: 31,},
+//    {id: id(), name: 'user3',
+//       surn: 'surn3', age: 32,},
+// ];
 
-   // const [arrUsers, setArrUsers] = useState(users);
+// const [arrUsers, setArrUsers] = useState(users);
 
+// let editProd = (e, field, id) => {
+//    setArrUsers(arrUsers.map(i => {
+//       if (i.id === id) {
+//          i[field] = e.target.value;
+//       }
+//       return i;
+//    }))
+// };
 
-   // let editProd = (e, field, id) => {
-   //    setArrUsers(arrUsers.map(i => {
-   //       if (i.id === id) {
-   //          i[field] = e.target.value;
-   //       }
-   //       return i;
-   //    }))
-   // };
+// const res = arrUsers.map(e => {
+//    return <User
+//       key={e.id}
+//       id={e.id}
+//       name={e.name}
+//       surn={e.surn}
+//       age={e.age}
+//       editProd={editProd}
+//       />
+// });
 
-
-
-   // const res = arrUsers.map(e => {
-   //    return <User 
-   //       key={e.id}
-   //       id={e.id} 
-   //       name={e.name}
-   //       surn={e.surn}
-   //       age={e.age}
-   //       editProd={editProd}
-   //       />
-   // }); 
- 
-   // return <div>
-   //       <table>
-   //          <tbody>
-   //          {res}
-   //          </tbody>
-   //       </table>
-   //    </div>
-
-
-
-
+// return <div>
+//       <table>
+//          <tbody>
+//          {res}
+//          </tbody>
+//       </table>
+//    </div>
 
 // function App() {
 //    const arrNum = [2,3,4,5,6,7];
@@ -105,7 +99,7 @@ export default App
 //          <li key={i} c
 //          onDoubleClick={() => {setValue(elem), setIndex(i)}}>{elem}</li>
 //          <button onClick={() => deleteNum(i)}>delete</button>
-//       </div> 
+//       </div>
 //   });
 //   function handleCHange(i) {
 //    const copy = Object.assign([], num);
@@ -129,19 +123,18 @@ export default App
 //    </div>
 // }
 
-
 // function App() {
 //    function getId(length = 16) {
 //       let chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-      
+
 //       let res = '';
-      
-//       for (let i = 0; i < 
-//          length; i++) { 
+
+//       for (let i = 0; i <
+//          length; i++) {
 //          res += chars[Math.floor(Math.random()
-//              * chars.length)]; 
+//              * chars.length)];
 //       }
-      
+
 //       return res;
 //    }
 //    const initNotes = [
@@ -175,7 +168,7 @@ export default App
 //                <span>{elem.prop3} </span>
 //                <button onClick={() => setValue(elem.prop1)}>delete</button>
 //             </li>
-            
+
 //          </>
 //    });
 //    let doSmth = (id) => {
